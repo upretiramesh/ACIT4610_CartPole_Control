@@ -1,5 +1,8 @@
+import config
+
+
 class CellularAutomata:
-    def __init__(self, cells, neighbours, iters):
+    def __init__(self, cells, current_rule, neighbours, iters):
         """
         :argument
         cells: current observation cells
@@ -8,15 +11,25 @@ class CellularAutomata:
         """
 
         self.cells = cells
+        self.current_rule = current_rule
         self.neighbours = neighbours
         self.iterations = iters
         self.action = None
-        self.run()
+        self.updates()
 
-    def run(self):
-        low, high = -int(self.neighbours / 2), int(self.neighbours / 2) + 1
+    def updates(self):
         n = len(self.cells)
-        for idx in range(n):
-            self.cells[idx] = 1 if sum(self.cells[(idx + low) % n:(idx + high) % n])>1 else 0
+        for _ in range(config.ITERATION_CA):
+            for idx in range(n):
+                self.cells[idx] = self.update_cell(idx, n)
 
         self.action = 1 if sum(self.cells) >= n/2 else 0
+
+    def update_cell(self, i, n):
+        low, high = -int(self.neighbours / 2), int(self.neighbours / 2) + 1
+        match = []
+        for j in range(low, high):
+            match.append(self.cells[(i+j)%n])
+        rule_ix = sum(2**(self.neighbours-(c_idx+1)) for c_idx in range(self.neighbours) if match[c_idx]==1)
+
+        return self.current_rule.rule[rule_ix]

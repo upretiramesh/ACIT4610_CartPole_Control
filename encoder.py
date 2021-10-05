@@ -3,7 +3,7 @@ import config
 
 
 class Encoder:
-    def __init__(self, obs, method=None, cp_high=0.7, cv_high=0.5, pa_high=0.08, pv_high=0.4):
+    def __init__(self, obs, method=None, cp_high=0.2, cv_high=0.2, pa_high=0.04, pv_high=0.2):
         self.obs = obs
         self.method = method
         self.obs_limit = [cp_high, cv_high, pa_high, pv_high]
@@ -11,6 +11,8 @@ class Encoder:
         self.cells = []
         if self.method == 'prob_base':
             self.probability_encoder(config.PROB_ITERATION)
+        elif self.method == 'mix':
+            self.mix_encoder(config.PROB_ITERATION, config.VALUE_ENCODE_LIMIT)
         else:
             self.value_encoder(config.VALUE_ENCODE_LIMIT)
 
@@ -35,3 +37,11 @@ class Encoder:
                     self.cells.append(1 if ob > limit else 0)
                 else:
                     self.cells.append(0 if ob < -limit else 1)
+
+    def mix_encoder(self, n, limits):
+        self.probability_encoder(n)
+        self.value_encoder(limits)
+
+
+en = Encoder([0.1, 0.2, 0.1, 0.3], method='mix')
+print(en.cells)
