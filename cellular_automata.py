@@ -1,6 +1,3 @@
-import config
-
-
 class CellularAutomata:
     def __init__(self, cells, current_rule, neighbours, iters):
         """
@@ -19,7 +16,7 @@ class CellularAutomata:
 
     def updates(self):
         n = len(self.cells)
-        for _ in range(config.ITERATION_CA):
+        for _ in range(self.iterations):
             for idx in range(n):
                 self.cells[idx] = self.update_cell(idx, n)
 

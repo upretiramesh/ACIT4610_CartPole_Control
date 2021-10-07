@@ -1,10 +1,9 @@
 import numpy as np
 import pandas as pd
 import gym
-import matplotlib.pyplot as plt
 
 
-class CreateGrid:
+class Create2DGrid:
     """
     Define Two Dimensional Cellular Automaton Environment
     """

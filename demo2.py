@@ -20,12 +20,4 @@ import random
 # print('Count 0: ', count0, 'Count 1: ', count1)
 # key = ''.join(str(i) for i in [1,1,1])
 # print(key)
-neighbours = 3
-match = [0,0,1]
-
-ss = ''.join(str(i) for i in match)
-print(ss)
-# print(bin(ss))
-
-rule_ix = sum(2**(neighbours-(c_idx+1)) for c_idx in range(neighbours) if match[c_idx]==1)
-print(rule_ix)
+print(True)

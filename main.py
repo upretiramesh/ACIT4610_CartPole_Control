@@ -33,11 +33,11 @@ for i_episode in range(20):
     observation = env.reset()
     for t in range(1000):
         env.render()
-        if observation[3] < -0.7003292:
+        if observation[3] < -0.7003292: #PV
             action = 0
         elif observation[3] > 0.7003292:
             action = 1
-        elif observation[2] < -0.11003292:
+        elif observation[2] < -0.11003292: #PA
             action = 0
         elif observation[2] > 0.11003292:
             action = 1

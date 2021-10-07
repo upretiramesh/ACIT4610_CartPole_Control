@@ -1,3 +1,4 @@
+import time
 import gym
 from encoder import Encoder
 from cellular_automata import CellularAutomata
@@ -23,6 +24,7 @@ for gn in range(config.NUMBER_OF_GENERATIONS):
         for t in range(config.RULE_ITERATION):
             observation = env.reset()
             env.render()
+            time.sleep(0.05)
             done = False
             fitness_count = 0
             while not done:
@@ -35,4 +37,5 @@ for gn in range(config.NUMBER_OF_GENERATIONS):
         rule.fitness_value = min(fitness)
         print('Generation ', gn, 'Rule no ', rn, 'Fitness ',  min(fitness), max(fitness))
     # optimization
+    rules = Mutation(rules, config.PARENTS)
 env.close()

@@ -9,6 +9,7 @@ class Encoder:
         self.obs_limit = [cp_high, cv_high, pa_high, pv_high]
         self.prob = self.convert_int_probability()
         self.cells = []
+
         if self.method == 'prob_base':
             self.probability_encoder(config.PROB_ITERATION)
         elif self.method == 'mix':
@@ -34,14 +35,10 @@ class Encoder:
         for limit in limits:
             for ob in self.obs:
                 if ob > 0:
-                    self.cells.append(1 if ob > limit else 0)
+                    self.cells.append(0 if ob > limit else 1)
                 else:
-                    self.cells.append(0 if ob < -limit else 1)
+                    self.cells.append(1 if ob < -limit else 0)
 
     def mix_encoder(self, n, limits):
         self.probability_encoder(n)
         self.value_encoder(limits)
-
-
-en = Encoder([0.1, 0.2, 0.1, 0.3], method='mix')
-print(en.cells)
