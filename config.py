@@ -1,6 +1,6 @@
 # Define Encoding Related Parameters
 # choose encoding method
-METHOD = 'mix' # or limit_base or mix or prob_base
+METHOD = 'limit_base' # or limit_base or mix or prob_base
 
 # if encoding method is prob_base
 PROB_ITERATION = 2
@@ -9,7 +9,7 @@ PROB_ITERATION = 2
 VALUE_ENCODE_LIMIT = [0.1, 0.2]
 
 # Define Cellular Automata Related Parameters
-NEIGHBOURS = 5
+NEIGHBOURS = 3
 ITERATION_CA = 3
 
 # Main program Iteration

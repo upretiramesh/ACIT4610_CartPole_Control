@@ -7,7 +7,7 @@ class Encoder:
         self.obs = obs
         self.method = method
         self.obs_limit = [cp_high, cv_high, pa_high, pv_high]
-        self.prob = self.convert_int_probability()
+        self.prob = self.convert_into_probability()
         self.cells = []
 
         if self.method == 'prob_base':
@@ -17,7 +17,7 @@ class Encoder:
         else:
             self.value_encoder(config.VALUE_ENCODE_LIMIT)
 
-    def convert_int_probability(self):
+    def convert_into_probability(self):
         lst = []
         for obs_limit, obs_value in zip(self.obs_limit, self.obs):
             lst.append(1 if abs(obs_value) > obs_limit else round(abs(obs_value) / obs_limit, 2))
@@ -31,6 +31,7 @@ class Encoder:
                     random.choices(action, [p, 1 - p])[0] if v > 0 else random.choices(action, [1 - p, p])[0])
 
     def value_encoder(self, limits):
+
         self.cells.extend([1 if ob > 0 else 0 for ob in self.obs])
         for limit in limits:
             for ob in self.obs:

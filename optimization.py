@@ -14,7 +14,6 @@ def Mutation(lst_rules, best_parents):
     for id, rule in enumerate(lst_rules):
         ruleId_fitness[id] = rule.fitness_value
     ruleId_fitness = sorted(ruleId_fitness.items(), key=lambda kv:kv[1], reverse=True)
-    # print(ruleId_fitness)
 
     parents = [lst_rules[rule[0]] for rule in ruleId_fitness][:best_parents]
     new_rules = []
@@ -24,7 +23,7 @@ def Mutation(lst_rules, best_parents):
         for i in range(int((len(lst_rules)-best_parents)/best_parents)):
             updated_rule = []
             for idx, val in enumerate(rule.rule):
-                if random.random() <= 0.2:
+                if random.random() <= 0.1:
                     updated_rule.append(1 if val == 0 else 0)
                 else:
                     updated_rule.append(val)
