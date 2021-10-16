@@ -41,13 +41,25 @@ print(sum(2 ** (len(ll3) - (c_idx + 1)) for c_idx in range(len(ll3)) if ll3[c_id
 
 
 print(random.random())
+
+
+##################################
+CP:  -2.4249918460845947 2.4455254077911377
+CV:  -2.541804075241089 2.4392290115356445
+PA:  -0.1711875945329666 0.175487220287323
+PV:  -1.0212944746017456 1.0190690755844116
+#######################################
 '''
+# x = 0.17267239093780518/2
+# for i in range(10, 0, -1):
+#     print(x, i, x/i)
 
-import pandas as pd
-import matplotlib.pyplot as plt
+ob =0.5
+for i in range(10, 0, -1):
+    print(0 if -0.1 < -ob/i else 1, -ob/i)
 
-df = pd.read_csv('performance.csv')
 
-print(df[df.rule==106])
-
-print(df.rule.value_counts())
+if -1<-0.5:
+    print('-1')
+else:
+    print('-0.5')

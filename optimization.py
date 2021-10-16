@@ -1,5 +1,6 @@
 import random
 from rules import DefineRule
+import config
 
 
 def Mutation(lst_rules, best_parents):
@@ -23,7 +24,7 @@ def Mutation(lst_rules, best_parents):
         for i in range(int((len(lst_rules)-best_parents)/best_parents)):
             updated_rule = []
             for idx, val in enumerate(rule.rule):
-                if random.random() <= 0.1:
+                if random.random() <= config.MUTATION_RATE:
                     updated_rule.append(1 if val == 0 else 0)
                 else:
                     updated_rule.append(val)

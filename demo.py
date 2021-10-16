@@ -37,15 +37,15 @@ for gn in range(config.NUMBER_OF_GENERATIONS):
                 fitness_count += 1
             fitness.append(fitness_count)
         # update fitness value
-        rule.fitness_value = min(fitness)  # np.mean(fitness)
+        rule.fitness_value = np.mean(fitness)  # np.mean(fitness)
         rn = sum(2 ** (len(rule.rule) - (c_idx + 1)) for c_idx in range(len(rule.rule)) if rule.rule[c_idx] == 1)
         # print(rule.rule)
         # print('Generation ', gn, 'Rule no ', rn, 'Fitness ',  min(fitness), max(fitness), np.mean(fitness))
         print(f'{gn} generation complete')
         performance.append({'generation':gn, 'rule':rn, 'min':min(fitness), 'avg':np.mean(fitness),
-                            'max':max(fitness),'neighbour':config.NEIGHBOURS, 'ca_size':len(rule.rule)})
+                            'max':max(fitness),'neighbour':config.NEIGHBOURS, 'ca_size':len(encoded_observation)})
     # optimization
     rules = Mutation(rules, config.PARENTS)
 df = pd.DataFrame(performance)
-df.to_csv('performance_1. sv', index=False)
+df.to_csv('performance_{}_mr{}_n{}_ca{}.csv'.format(config.METHOD, config.MUTATION_RATE, config.NEIGHBOURS, len(encoded_observation)), index=False)
 env.close()

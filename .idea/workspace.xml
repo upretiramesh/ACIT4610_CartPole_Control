@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd54a867-f25c-4340-95f6-2ec100e295a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/visualization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cellular_automata.py" beforeDir="false" afterPath="$PROJECT_DIR$/cellular_automata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo2.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo2.py" afterDir="false" />
@@ -48,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.demo2">
+  <component name="RunManager" selected="Python.encoder">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="CartPole" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -154,7 +154,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rules" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="visualization" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CartPole" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -166,7 +166,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rules.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/visualization.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,19 +177,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.demo" />
       <item itemvalue="Python.demo2" />
+      <item itemvalue="Python.visualization" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.encoder" />
-      <item itemvalue="Python.rules" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.demo2" />
-        <item itemvalue="Python.demo" />
-        <item itemvalue="Python.rules" />
         <item itemvalue="Python.encoder" />
+        <item itemvalue="Python.demo" />
+        <item itemvalue="Python.demo2" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.visualization" />
       </list>
     </recent_temporary>
   </component>
