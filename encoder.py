@@ -19,7 +19,7 @@ class Encoder:
             self.encoder_only_poleAngle_poleVelocity()
         elif self.method == 'cart_position_velocity':
             self.encoder_only_cartPosition_cartVelocity()
-        elif self.method == 'card_pole':
+        elif self.method == 'cart_pole':
             self.encode_both_cart_and_pole()
         else:
             self.value_encoder(config.VALUE_ENCODE_LIMIT)

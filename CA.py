@@ -20,13 +20,14 @@ class Create2DGrid:
             pd.cut([self.high[0], self.low[0]], bins=self.binss + 1,
                    retbins=True)[1][1:-1]).reshape(self.grid_size, self.grid_size)
         self.grid[0:self.grid_size, self.grid_size:] = np.array(pd.cut([self.high[1], self.low[1]], bins=self.binss + 1,
-                                                    retbins=True)[1][1:-1]).reshape(self.grid_size, self.grid_size)
+                                                                       retbins=True)[1][1:-1]).reshape(self.grid_size,
+                                                                                                       self.grid_size)
         self.grid[self.grid_size:, 0:self.grid_size] = np.array(pd.cut([self.high[2], self.low[3]], bins=self.binss + 1,
-                                                retbins=True)[1][1:-1]).reshape(self.grid_size, self.grid_size)
+                                                                       retbins=True)[1][1:-1]).reshape(self.grid_size,
+                                                                                                       self.grid_size)
         self.grid[self.grid_size:, self.grid_size:] = np.array(pd.cut([self.high[0], self.low[0]], bins=self.binss + 1,
-                                            retbins=True)[1][1:-1]).reshape(self.grid_size, self.grid_size)
-
-
+                                                                      retbins=True)[1][1:-1]).reshape(self.grid_size,
+                                                                                                      self.grid_size)
 
     def find_closet_observation_index(self, obs):
         """
@@ -40,11 +41,13 @@ class Create2DGrid:
         pole_angle = obs[2]
         pole_velocity = obs[3]
 
-        cart_position_idx = np.digitize([cart_position], np.array(self.grid[:self.grid_size, :self.grid_size]).reshape())
-        cp_idx = int(cart_position_idx/self.grid_size)
-        cp_idy = cart_position_idx%self.grid_size
+        cart_position_idx = np.digitize([cart_position],
+                                        np.array(self.grid[:self.grid_size, :self.grid_size]).reshape())
+        cp_idx = int(cart_position_idx / self.grid_size)
+        cp_idy = cart_position_idx % self.grid_size
 
-        cart_velocity_idx = np.digitize([cart_velocity], np.array(self.grid[:self.grid_size, self.grid_size:]).reshape())
+        cart_velocity_idx = np.digitize([cart_velocity],
+                                        np.array(self.grid[:self.grid_size, self.grid_size:]).reshape())
         cv_idx = int(cart_velocity_idx / self.grid_size)
         cv_idy = cart_velocity_idx % self.grid_size
 
@@ -52,14 +55,10 @@ class Create2DGrid:
         pa_idx = int(pole_angle_idx / self.grid_size)
         pa_idy = pole_angle_idx % self.grid_size
 
-        pole_velocity_idx = np.digitize([pole_velocity], np.array(self.grid[self.grid_size:, self.grid_size:]).reshape())
+        pole_velocity_idx = np.digitize([pole_velocity],
+                                        np.array(self.grid[self.grid_size:, self.grid_size:]).reshape())
         pv_idx = int(pole_velocity_idx / self.grid_size)
         pv_idy = pole_velocity_idx % self.grid_size
-
-
-
-
-
 
 
 grid = CreateGrid(111)

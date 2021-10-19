@@ -1,11 +1,12 @@
 import random
 import config
+import numpy as np
 
 
 class DefineRule:
     def __init__(self, idx=None, rules=None):
         self.n_neighbours = config.NEIGHBOURS
-        self.fitness_value = random.randint(0, 50)
+        self.fitness_value = 0
         self.rule = []
         self.rule_list = rules
         if self.rule_list:
@@ -29,23 +30,35 @@ class DefineRule:
                 self.rule.append(random.randint(0, 1))
 
 
-def Define_Rule(idx, n_neighbours):
-    rule = []
-    if idx == 0:
-        for n in range(2 ** n_neighbours):
-            binary_number = format(n, 'b')
-            total = sum([int(i) for i in binary_number])
-            rule.append(1 if total > int(n_neighbours / 2) else 0)
-    elif idx == 1:
-        for n in range(2 ** n_neighbours):
-            binary_number = format(n, 'b')
-            total = sum([int(i) for i in binary_number])
-            rule.append(1 if total % 2 == 0 else 0)
-    else:
-        for n in range(2 ** n_neighbours):
-            rule.append(random.randint(0, 1))
+class DefineRuleForNetwork:
+    def __init__(self, mut_rule=None):
+        """
 
-    # use last index to store fitness value
-    rule.append(0)
+        :type mut_rule: mutated 2d table >> numpy 2d
 
-    return rule
+
+        """
+
+        if config.METHOD in ['pole_angle_velocity', 'cart_position_velocity']:
+            self.rule_size = 2 * config.BINS
+        elif config.METHOD == 'cart_pole':
+            self.rule_size = 4 * config.BINS
+        else:
+            print('choose of the of the encoder: pole_angle_velocity, cart_position_velocity, cart_pole')
+            exit()
+
+        self.fitness_value = 0
+        self.rule = np.zeros((self.rule_size, self.rule_size))
+        self.mut_rule = mut_rule
+
+        try:
+            if self.mut_rule:
+                self.rule = self.mut_rule
+            else:
+                self.create_new_rule()
+        except:
+            self.rule = self.mut_rule
+
+    def create_new_rule(self):
+        for i in range(self.rule_size):
+            self.rule[i, :] = random.choices([0, 1], weights=[0.7, 0.3], k=self.rule_size)

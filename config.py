@@ -1,7 +1,8 @@
 # Define Encoding Related Parameters
 # choose encoding method
-# possible value : cart_position_velocity, pole_angle_velocity, card_pole, limit_base or mix or prob_base
-METHOD = 'card_pole'
+# possible value : cart_position_velocity, pole_angle_velocity, cart_pole, limit_base or mix or prob_base
+METHOD = 'pole_angle_velocity'
+
 # if encoding method is prob_base
 PROB_ITERATION = 2
 
@@ -21,12 +22,15 @@ NEIGHBOURS = 3
 ITERATION_CA = 5
 
 # Main program Iteration
-NUMBER_OF_RULES = 20
-NUMBER_OF_GENERATIONS = 1000
+NUMBER_OF_RULES = 10
+NUMBER_OF_GENERATIONS = 10
 RULE_ITERATION = 5
 
 # Define number of parents for optimization
-PARENTS = 2
+PARENTS = 4
 
 # Define mutation rate
 MUTATION_RATE = 0.05
+
+# define model
+MODEL = 'NX' # possible values: CA or NX
