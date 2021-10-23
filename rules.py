@@ -5,7 +5,10 @@ import numpy as np
 
 class DefineRule:
     def __init__(self, idx=None, rules=None):
-        self.n_neighbours = config.NEIGHBOURS
+        if config.MODEL == '2DCA':
+            self.n_neighbours = config.NEIGHBOURS**2
+        else:
+            self.n_neighbours = config.NEIGHBOURS
         self.fitness_value = 0
         self.rule = []
         self.rule_list = rules

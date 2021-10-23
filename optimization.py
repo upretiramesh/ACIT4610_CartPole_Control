@@ -21,7 +21,7 @@ def Mutation(lst_rules, best_parents, model):
 
     parents = [lst_rules[rule[0]] for rule in ruleId_fitness][:best_parents]
 
-    if model == 'CA':
+    if 'CA' in model:
         return ca_rule_mutation(parents, len(lst_rules), best_parents)
     elif model == 'NX':
         return network_rule_mutation(parents, len(lst_rules), best_parents)

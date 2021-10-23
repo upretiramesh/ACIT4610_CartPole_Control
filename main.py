@@ -23,4 +23,4 @@ print('#####################################\n')
 train_model(model_path, result_path, env)
 
 # test the model
-test_model(model_path, env)
+# test_model(model_path, env)

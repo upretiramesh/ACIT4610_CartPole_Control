@@ -33,4 +33,4 @@ PARENTS = 4
 MUTATION_RATE = 0.05
 
 # define model
-MODEL = 'NX' # possible values: CA or NX
+MODEL = '2DCA' # possible values: 1DCA or 2DCA or NX

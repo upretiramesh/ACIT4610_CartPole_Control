@@ -22,7 +22,7 @@ def train_model(mPath, rPath, env):
     # Creates rules
     rules = []
     for n in range(config.NUMBER_OF_RULES):
-        if config.MODEL == 'CA':
+        if 'CA' in config.MODEL:
             rule = DefineRule(n)
             rules.append(rule)
         elif config.MODEL == 'NX':
@@ -59,7 +59,7 @@ def train_model(mPath, rPath, env):
             rule.fitness_value = fitness_value
 
             # calculate rule number
-            if config.MODEL == 'CA':
+            if 'CA' in config.MODEL:
                 rn = sum(2 ** (len(rule.rule) - (c_idx + 1)) for c_idx in range(len(rule.rule)) if rule.rule[c_idx] == 1)
 
             # save best rule so far based on highest average fitness
@@ -84,7 +84,7 @@ def train_model(mPath, rPath, env):
                 outfile.close()
 
             end = time.perf_counter()
-            if config.MODEL == 'CA':
+            if 'CA' in config.MODEL:
                 performance.append({'model':config.MODEL, 'generation': gn, 'rule': rn, 'min': min(fitness), 'avg': np.mean(fitness),
                                 'max': max(fitness), 'neighbour': config.NEIGHBOURS,
                                 'ca_size': len(encoded_observation), 'time': end - start})
@@ -101,8 +101,8 @@ def train_model(mPath, rPath, env):
 
     # save training history
     train_history.to_csv(rPath +
-                         'performance_{}_mr{}_n{}_bin{}_ca{}.csv'.format(config.METHOD, config.MUTATION_RATE,
-                                                                         config.NEIGHBOURS, config.BINS,
+                         'performance_m:{}_en:{}_mr:{}_p:{}_n:{}_bin:{}_ca:{}.csv'.format(config.MODEL, config.METHOD, config.MUTATION_RATE,
+                                                                         config.PARENTS, config.NEIGHBOURS, config.BINS,
                                                                          len(encoded_observation)), index=False)
 
 
