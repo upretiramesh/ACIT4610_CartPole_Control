@@ -20,7 +20,7 @@ print(f'Number of generations: {config.NUMBER_OF_GENERATIONS}')
 print('#####################################\n')
 
 # train the model
-train_model(model_path, result_path, env)
+# train_model(model_path, result_path, env)
 
 # test the model
-# test_model(model_path, env)
+test_model(model_path, env)

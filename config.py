@@ -27,10 +27,11 @@ NUMBER_OF_GENERATIONS = 10
 RULE_ITERATION = 5
 
 # Define number of parents for optimization
-PARENTS = 4
+PARENTS = 2
 
 # Define mutation rate
 MUTATION_RATE = 0.05
+MUTATION_TYPE = 'RCM' # RCM:Reproduction Crossover and Mutation, RM: Reproduction and Mutation
 
 # define model
-MODEL = '2DCA' # possible values: 1DCA or 2DCA or NX
+MODEL = '1DCA' # possible values: 1DCA or 2DCA or NX

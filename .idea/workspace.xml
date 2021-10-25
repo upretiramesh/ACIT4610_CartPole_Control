@@ -6,17 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cd54a867-f25c-4340-95f6-2ec100e295a7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo2.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/best_rule_train_on_avg" beforeDir="false" afterPath="$PROJECT_DIR$/models/best_rule_train_on_avg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/best_rule_train_on_max" beforeDir="false" afterPath="$PROJECT_DIR$/models/best_rule_train_on_max" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/best_rule_train_on_min" beforeDir="false" afterPath="$PROJECT_DIR$/models/best_rule_train_on_min" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/performance_pole_angle_velocity_mr0.05_n3_bin10_ca20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/performance_pole_angle_velocity_mr0.05_n3_bin10_ca20.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/rules.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,7 +92,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="demo2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CartPole" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,7 +104,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -139,7 +134,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="optimization" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CartPole" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,7 +146,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optimization.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,19 +178,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.demo2" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.model" />
       <item itemvalue="Python.Week4_Bhandari" />
       <item itemvalue="Python.week52_bhandari" />
+      <item itemvalue="Python.demo" />
+      <item itemvalue="Python.optimization" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.demo" />
+        <item itemvalue="Python.optimization" />
         <item itemvalue="Python.week52_bhandari" />
         <item itemvalue="Python.Week4_Bhandari" />
-        <item itemvalue="Python.demo2" />
-        <item itemvalue="Python.model" />
       </list>
     </recent_temporary>
   </component>

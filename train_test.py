@@ -7,7 +7,7 @@ import pandas as pd
 from encoder import Encoder
 from model import Model
 from rules import DefineRule, DefineRuleForNetwork
-from optimization import Mutation
+from optimization import Optimization
 import config
 
 
@@ -92,7 +92,7 @@ def train_model(mPath, rPath, env):
                 performance.append({'model':config.MODEL, 'generation': gn, 'min': min(fitness), 'avg': np.mean(fitness),
                                     'max': max(fitness), 'ca_size': len(encoded_observation), 'time': end - start})
         # optimization
-        rules = Mutation(rules, config.PARENTS, config.MODEL)
+        rules = Optimization(rules, config.PARENTS, config.MODEL)
     train_history = pd.DataFrame(performance)
 
     # create folder to store training history if not exists
