@@ -4,23 +4,25 @@ import config
 
 env = gym.make('CartPole-v0')
 # Reset the max step --> default is 200
-env._max_episode_steps = 2000
+env._max_episode_steps = 5000
 
 # define path to store best rule and history during training
 model_path = './models/'
 result_path = './result/'
 
 print('###### Current Configuration ######')
+print(f'Model: {config.MODEL}')
 print(f'Neighbours: {config.NEIGHBOURS}')
 print(f'Encoding policy: {config.METHOD}')
 print(f'Bins size: {config.BINS}')
 print(f'Mutation rate: {config.MUTATION_RATE}')
+print(f'Mutation type: {config.MUTATION_TYPE}')
 print(f'Number of rules: {config.NUMBER_OF_RULES}')
 print(f'Number of generations: {config.NUMBER_OF_GENERATIONS}')
 print('#####################################\n')
 
 # train the model
-# train_model(model_path, result_path, env)
+train_model(model_path, result_path, env)
 
 # test the model
 test_model(model_path, env)

@@ -17,6 +17,10 @@ class Encoder:
             self.mix_encoder(config.PROB_ITERATION, config.VALUE_ENCODE_LIMIT)
         elif self.method == 'pole_angle_velocity':
             self.encoder_only_poleAngle_poleVelocity()
+        elif self.method == 'pole_angle_velocity_repetition':
+            self.encode_only_pa_pv_with_repetition(together=False)
+        elif self.method == 'pa_cp_repetition':
+            self.encode_only_pa_cp_with_repetition(together=False)
         elif self.method == 'cart_position_velocity':
             self.encoder_only_cartPosition_cartVelocity()
         elif self.method == 'cart_pole':
@@ -94,3 +98,27 @@ class Encoder:
     def mix_encoder(self, n, limits):
         self.probability_encoder(n)
         self.value_encoder(limits)
+
+    def encode_only_pa_pv_with_repetition(self, together=False):
+        if together:
+            for _ in range(config.BINS):
+                self.cells.append(1 if self.obs[2] > 0 else 0)
+                self.cells.append(1 if self.obs[3] > 0 else 0)
+        else:
+            for _ in range(config.BINS):
+                self.cells.append(1 if self.obs[2] > 0 else 0)
+
+            for _ in range(config.BINS):
+                self.cells.append(1 if self.obs[3] > 0 else 0)
+
+    def encode_only_pa_cp_with_repetition(self, together=False):
+        if together:
+            for _ in range(config.BINS):
+                self.cells.append(1 if self.obs[2] > 0 else 0)
+                self.cells.append(0 if self.obs[0] > 0 else 1)
+        else:
+            for _ in range(config.BINS):
+                self.cells.append(1 if self.obs[2] > 0 else 0)
+
+            for _ in range(config.BINS):
+                self.cells.append(0 if self.obs[0] > 0 else 1)

@@ -63,5 +63,9 @@ class DefineRuleForNetwork:
             self.rule = self.mut_rule
 
     def create_new_rule(self):
+        '''
+        allow each node to make random connection with around 30% of total nodes
+        :return:
+        '''
         for i in range(self.rule_size):
             self.rule[i, :] = random.choices([0, 1], weights=[0.7, 0.3], k=self.rule_size)
